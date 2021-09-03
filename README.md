@@ -1,19 +1,36 @@
-#include <stdio.h>
-int main() {
-    int n, i;
-    unsigned long long fact = 1;
-    printf("Enter an integer: ");
-    scanf("%d", &n);
+#include <bits/stdc++.h>
+using namespace std;
+bool isFactorial(int n)
+{
+for (int i = 1;; i++) {
+	if (n % i == 0) {
+	n /= i;
+	}
+	else {
+	break;
+	}
+}
 
-    // shows error if the user enters a negative integer
-    if (n < 0)
-        printf("Error! Factorial of a negative number doesn't exist.");
-    else {
-        for (i = 1; i <= n; ++i) {
-            fact *= i;
-        }
-        printf("Factorial of %d = %llu", n, fact);
-    }
+if (n == 1) {
+	return true;
+}
+else {
+	return false;
+}
+}
 
-    return 0;
+// Driver Code
+int main()
+{
+int n = 24;
+
+bool ans = isFactorial(n);
+if (ans == 1) {
+	cout << "Yes\n";
+}
+else {
+	cout << "No\n";
+}
+
+return 0;
 }
