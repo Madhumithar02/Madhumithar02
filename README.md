@@ -1,12 +1,19 @@
 #include <stdio.h>
-#include <math.h>
-int main()
-{
-  double a, b, c, s, area;
-  printf("Enter sides of a triangle\n");
-  scanf("%lf%lf%lf", &a, &b, &c);
-  s = (a+b+c)/2; 
-  area = sqrt(s*(s-a)*(s-b)*(s-c));
-  printf("Area of the triangle = %.2lf\n", area);
-  return 0;
+int main() {
+    int n, i;
+    unsigned long long fact = 1;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+
+    // shows error if the user enters a negative integer
+    if (n < 0)
+        printf("Error! Factorial of a negative number doesn't exist.");
+    else {
+        for (i = 1; i <= n; ++i) {
+            fact *= i;
+        }
+        printf("Factorial of %d = %llu", n, fact);
+    }
+
+    return 0;
 }
