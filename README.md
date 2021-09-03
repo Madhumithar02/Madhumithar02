@@ -1,36 +1,17 @@
-#include <bits/stdc++.h>
-using namespace std;
-bool isFactorial(int n)
-{
-for (int i = 1;; i++) {
-	if (n % i == 0) {
-	n /= i;
-	}
-	else {
-	break;
-	}
-}
-
-if (n == 1) {
-	return true;
-}
-else {
-	return false;
-}
-}
-
-// Driver Code
-int main()
-{
-int n = 24;
-
-bool ans = isFactorial(n);
-if (ans == 1) {
-	cout << "Yes\n";
-}
-else {
-	cout << "No\n";
-}
-
-return 0;
-}
+class PalindromeExample{  
+ public static void main(String args[]){  
+  int r,sum=0,temp;    
+  int n=454;//It is the number variable to be checked for palindrome  
+  
+  temp=n;    
+  while(n>0){    
+   r=n%10;  //getting remainder  
+   sum=(sum*10)+r;    
+   n=n/10;    
+  }    
+  if(temp==sum)    
+   System.out.println("palindrome number ");    
+  else    
+   System.out.println("not palindrome");    
+}  
+}  
